@@ -5,22 +5,23 @@ namespace ToDoList.Models
   public class Item
   {
     public string Description { get; set; }
-    public static List<Item> Instances = new List<Item> {};
+    public static List<Item> _instances = new List<Item> {};
 
     public Item(string description)
     {
       Description = description;
-      Instances.Add(this);
+      
+      _instances.Add(this);
     }
 
     public static List<Item> GetAll()
     {
-      return Instances;
+      return _instances;
     }
 
     public static void ClearAll()
     {
-      Instances.Clear();
+      _instances.Clear();
     }
 
   }
